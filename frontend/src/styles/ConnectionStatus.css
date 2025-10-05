@@ -1,0 +1,41 @@
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-bg-tertiary);
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  font-size: 0.875rem;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+.status-indicator.connected {
+  background: var(--color-success);
+  box-shadow: 0 0 10px rgba(72, 187, 120, 0.5);
+}
+
+.status-indicator.disconnected {
+  background: var(--color-danger);
+  box-shadow: 0 0 10px rgba(245, 101, 101, 0.5);
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.connection-status span {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
